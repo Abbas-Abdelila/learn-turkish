@@ -19,8 +19,8 @@ const Posts = () => {
     <div className="flex my-10 justify-start">
       <Categories selectedLevel="All" />
     </div>
-    <div className="flex space-x-10">
-      <div className="max-w-[60%]">
+    <div className="flex flex-col md:flex-row md:space-x-10">
+      <div className="md:w-[60%]">
       {posts.map((post) => {
         return (
           <div key={post._id} className="flex flex-col mb-5 ">
@@ -32,7 +32,7 @@ const Posts = () => {
         )
       })}
       </div>
-      <div>
+      <div className="md:w-[40%]">
 
       </div>
     </div>

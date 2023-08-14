@@ -25,11 +25,11 @@ const Levels = ({ params } : { params : { level : string}}) => {
     <div className="flex my-10 justify-start">
       <Categories selectedLevel={params.level.toLowerCase()} />
     </div>
-    <div className="flex space-x-10">
-      <div className="max-w-[60%]">
+    <div className="flex flex-col md:flex-row md:space-x-10">
+      <div className="md:w-[60%]">
       {posts.map((post) => {
         return (
-          <div key={post._id} className="flex flex-col mb-5 ">
+          <div key={post._id} className="flex flex-col mb-5">
             <Link href={`${params.level}/${post.url}`}>
             <h1 className="text-xl text-slate-800 font-medium hover:text-blue-700 hover:underline underline-[1px] decoration-red-200 underline-offset-[6px] cursor-pointer">{post.title}</h1>
             </Link>
@@ -38,8 +38,7 @@ const Levels = ({ params } : { params : { level : string}}) => {
         )
       })}
       </div>
-      <div>
-
+      <div className="md:w-[40%]">
       </div>
     </div>
       
