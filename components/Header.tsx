@@ -39,7 +39,7 @@ const Header = () => {
             </li>
             <li className="px-2 py-1">
               <Link
-                href="/"
+                href="/posts/all"
                 className="text-gray-700  hover:text-red-500 transition-all ease-in-out duration-200"
               >
                 Blogs

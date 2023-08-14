@@ -4,6 +4,20 @@ import { allPosts, Post } from "contentlayer/generated";
 import { getMDXComponent } from "next-contentlayer/hooks";
 import Categories from "@/components/Categories";
 
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { level: string };
+}) {
+  return {
+    title: `${ params.level.toUpperCase()} | Pick Turkish`,
+  };
+}
+
+
+
+
 const Levels = ({ params } : { params : { level : string}}) => {
   const posts: Post[] = allPosts.filter((post) => post.level.toLowerCase() == params.level.toLowerCase());
   return (
