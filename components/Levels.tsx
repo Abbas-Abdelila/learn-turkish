@@ -43,7 +43,7 @@ const Levels = () => {
         <Link href="/posts/c1">
         <LevelCard
           title="C1"
-          desc="Read timeless principles by great authors in Turkish"
+          desc="Read timeless principles by great thinker in Turkish"
           image="C1.png"
         />
         </Link>
