@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { compareDesc, format, parseISO } from "date-fns";
 import { allPosts, Post } from "contentlayer/generated";
-import { getMDXComponent } from "next-contentlayer/hooks";
+// import { getMDXComponent } from "next-contentlayer/hooks";
 import Categories from "@/components/Categories";
 import type { Metadata } from 'next'
 
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 
 const Posts = () => {
-  const posts: Post[] = allPosts;
+  const posts: Post[] = allPosts.sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)));
   return (
     <div className="flex flex-col space-y-4 w-[95%] mx-auto">
     <div className="flex my-10 justify-start">

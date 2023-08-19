@@ -19,7 +19,8 @@ export async function generateMetadata({
 
 
 const Levels = ({ params } : { params : { level : string}}) => {
-  const posts: Post[] = allPosts.filter((post) => post.level.toLowerCase() == params.level.toLowerCase());
+  const posts: Post[] = allPosts.filter((post) => post.level.toLowerCase() == params.level.toLowerCase()).sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)));
+  
   return (
     <div className="flex flex-col space-y-4 w-[95%] mx-auto">
     <div className="flex my-10 justify-start">
