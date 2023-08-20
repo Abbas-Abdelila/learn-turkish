@@ -1,9 +1,8 @@
 // @ts-nocheck
-import Link from "next/link";
+// import Link from "next/link";
 import Image from "next/image";
-import { compareDesc, format, parseISO } from "date-fns";
-import { Metadata } from "next";
-import { allPosts, Post } from "contentlayer/generated";
+// import { compareDesc, format, parseISO } from "date-fns";
+import { allPosts } from "contentlayer/generated";
 import { getMDXComponent } from "next-contentlayer/hooks";
 
 export async function generateMetadata({
@@ -13,8 +12,8 @@ export async function generateMetadata({
 }) {
   return {
     title: allPosts.find(
-      (post) => post.url.split('/').slice(-1)[0]  == params.slug
-      ).title,
+      (post) => post.url.split("/").slice(-1)[0] == params.slug
+    ).title,
   };
 }
 
@@ -31,10 +30,9 @@ function RoundedImage(props) {
 const ComponentMap = { Image: RoundedImage };
 
 const PostPage = ({ params }: { params: { slug: string } }) => {
-   const currentPost = allPosts.find(
-
+  const currentPost = allPosts.find(
     // @ts-ignore
-    (post) => post.url.split('/').slice(-1)[0] == params.slug
+    (post) => post.url.split("/").slice(-1)[0] == params.slug
   );
   if (!currentPost) {
     return (
