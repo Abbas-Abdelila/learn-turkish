@@ -18,7 +18,7 @@ const PostComponent = ({ title, image, desc, url, level }: PostProps) => {
           src={`/images/${image}`}
           alt="Level Image"
           fill
-          className="rounded"
+          className="rounded-lg"
         />
       </div>
 
