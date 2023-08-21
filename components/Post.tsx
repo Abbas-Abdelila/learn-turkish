@@ -25,7 +25,7 @@ const PostComponent = ({ title, image, desc, url, level }: PostProps) => {
       {/* right */}
       <div className="flex flex-col w-full">
         <Link href={`/posts/${level.toLowerCase()}/${url}`}>
-        <h1 className="font-semibold text-xl text-gray-900 cursor-pointer">
+        <h1 className="font-semibold text-xl text-gray-900 cursor-pointer line-clamp-2">
           {title}
         </h1>
         </Link>
