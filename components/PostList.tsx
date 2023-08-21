@@ -8,7 +8,7 @@ const posts = allPosts.sort((a, b) => compareDesc(new Date(a.date), new Date(b.d
 
 const PostList = () => {
  return (
-  <div className="">
+  <div className="md:grid grid-cols-2 lg:grid-cols-3 md:gap-x-3 lg:gap-x-4">
     {posts.map((post: Post) => (
       <PostComponent
         url={post.url}
