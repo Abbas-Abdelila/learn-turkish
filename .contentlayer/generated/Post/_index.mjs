@@ -9,5 +9,6 @@ import pluralsMdx from './plurals.mdx.json' assert { type: 'json' }
 import thisThatHereThereMdx from './this-that-here-there.mdx.json' assert { type: 'json' }
 import varYokMdx from './var-yok.mdx.json' assert { type: 'json' }
 import yonelmeEkiToMdx from './yonelme-eki-to.mdx.json' assert { type: 'json' }
+import simplePastBelirtiliMdx from './simple-past-belirtili.mdx.json' assert { type: 'json' }
 
-export const allPosts = [belirtmeEkiTheMdx, fromDanDenTanTenMdx, getStartedArticleMdx, locativeSuffixMdx, numbersMdx, pluralsMdx, thisThatHereThereMdx, varYokMdx, yonelmeEkiToMdx]
+export const allPosts = [belirtmeEkiTheMdx, fromDanDenTanTenMdx, getStartedArticleMdx, locativeSuffixMdx, numbersMdx, pluralsMdx, thisThatHereThereMdx, varYokMdx, yonelmeEkiToMdx, simplePastBelirtiliMdx]
