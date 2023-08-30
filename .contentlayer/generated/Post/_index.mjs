@@ -10,6 +10,7 @@ import getStartedArticleMdx from './get-started-article.mdx.json' assert { type:
 import ileWithByAndMdx from './ile-with-by-and.mdx.json' assert { type: 'json' }
 import locativeSuffixMdx from './locative-suffix.mdx.json' assert { type: 'json' }
 import numbersMdx from './numbers.mdx.json' assert { type: 'json' }
+import opinionGoreMdx from './opinion-gore.mdx.json' assert { type: 'json' }
 import pluralsMdx from './plurals.mdx.json' assert { type: 'json' }
 import simplePastBelirtiliMdx from './simple-past-belirtili.mdx.json' assert { type: 'json' }
 import sinceForMdx from './since-for.mdx.json' assert { type: 'json' }
@@ -17,4 +18,4 @@ import thisThatHereThereMdx from './this-that-here-there.mdx.json' assert { type
 import varYokMdx from './var-yok.mdx.json' assert { type: 'json' }
 import yonelmeEkiToMdx from './yonelme-eki-to.mdx.json' assert { type: 'json' }
 
-export const allPosts = [beforeAfterMdx, belirtmeEkiTheMdx, danDahaCompareMdx, enSifatMdx, fromDanDenTanTenMdx, futureTenseMdx, getStartedArticleMdx, ileWithByAndMdx, locativeSuffixMdx, numbersMdx, pluralsMdx, simplePastBelirtiliMdx, sinceForMdx, thisThatHereThereMdx, varYokMdx, yonelmeEkiToMdx]
+export const allPosts = [beforeAfterMdx, belirtmeEkiTheMdx, danDahaCompareMdx, enSifatMdx, fromDanDenTanTenMdx, futureTenseMdx, getStartedArticleMdx, ileWithByAndMdx, locativeSuffixMdx, numbersMdx, opinionGoreMdx, pluralsMdx, simplePastBelirtiliMdx, sinceForMdx, thisThatHereThereMdx, varYokMdx, yonelmeEkiToMdx]
