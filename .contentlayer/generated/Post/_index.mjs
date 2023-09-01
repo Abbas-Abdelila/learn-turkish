@@ -2,6 +2,7 @@
 
 import beforeAfterMdx from './before-after.mdx.json' assert { type: 'json' }
 import belirtmeEkiTheMdx from './belirtme-eki-the.mdx.json' assert { type: 'json' }
+import danAKadarMdx from './dan-a-kadar.mdx.json' assert { type: 'json' }
 import danDahaCompareMdx from './dan-daha-compare.mdx.json' assert { type: 'json' }
 import enSifatMdx from './en-sifat.mdx.json' assert { type: 'json' }
 import fromDanDenTanTenMdx from './from-dan-den-tan-ten.mdx.json' assert { type: 'json' }
@@ -19,4 +20,4 @@ import thisThatHereThereMdx from './this-that-here-there.mdx.json' assert { type
 import varYokMdx from './var-yok.mdx.json' assert { type: 'json' }
 import yonelmeEkiToMdx from './yonelme-eki-to.mdx.json' assert { type: 'json' }
 
-export const allPosts = [beforeAfterMdx, belirtmeEkiTheMdx, danDahaCompareMdx, enSifatMdx, fromDanDenTanTenMdx, futureTenseMdx, getStartedArticleMdx, ileWithByAndMdx, locativeSuffixMdx, numbersMdx, opinionBenceMdx, opinionGoreMdx, pluralsMdx, simplePastBelirtiliMdx, sinceForMdx, thisThatHereThereMdx, varYokMdx, yonelmeEkiToMdx]
+export const allPosts = [beforeAfterMdx, belirtmeEkiTheMdx, danAKadarMdx, danDahaCompareMdx, enSifatMdx, fromDanDenTanTenMdx, futureTenseMdx, getStartedArticleMdx, ileWithByAndMdx, locativeSuffixMdx, numbersMdx, opinionBenceMdx, opinionGoreMdx, pluralsMdx, simplePastBelirtiliMdx, sinceForMdx, thisThatHereThereMdx, varYokMdx, yonelmeEkiToMdx]
