@@ -25,8 +25,8 @@ export default function Chat() {
       </h1>
       {messages.length > 0 ? (
         messages.map((m) => (
-          <div key={m.id} className="whitespace-pre-wrap">
-            {m.role === "user" ? "You:  " : "Delight:  "}
+          <div key={m.id} className="whitespace-pre-wrap my-2">
+            {m.role === "user" ? <span className="text-md font-bold">You<span className="mx-1">:</span></span> : <span className="font-bold text-md text-red-500 mr-1">Delight<span className="mx-1">:</span></span>}
             {m.content}
           </div>
         ))
@@ -41,7 +41,7 @@ export default function Chat() {
         </div>
       )}
       <div ref={messageEndRef}></div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} autoComplete="on">
         <div
           className={`flex items-center space-between fixed bottom-0 w-full max-w-md p-2 mb-8  ${
             inputFocused ? "border-2 border-red-500" : "border border-red-400"
