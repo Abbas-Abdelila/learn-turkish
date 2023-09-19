@@ -4,6 +4,7 @@ import Image from "next/image";
 // import { compareDesc, format, parseISO } from "date-fns";
 import { allPosts } from "contentlayer/generated";
 import { getMDXComponent } from "next-contentlayer/hooks";
+import Chat from "@/components/Chat";
 
 export async function generateMetadata({
   params,
@@ -43,10 +44,17 @@ const PostPage = ({ params }: { params: { slug: string } }) => {
   }
   const Component = getMDXComponent(currentPost.body.code);
   return (
-    <div className="flex justify-center p-5">
+    <div className="flex w-[95%] mx-auto divide-x divide-red-200">
+    <div className="flex justify-center p-5 md:w-[60%]">
       <article className="prose prose-slate prose-xl max-w-3xl prose-hr:border-red-200 prose-strong:text-red-500 ">
         <Component components={{ ...ComponentMap }} />
       </article>
+    </div>
+    <div className="hidden md:block md:w-[40%]">
+          <div className="sticky top-0">
+            <Chat />
+          </div>
+        </div>
     </div>
   );
 };
