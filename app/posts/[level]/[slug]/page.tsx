@@ -1,7 +1,5 @@
 // @ts-nocheck
-// import Link from "next/link";
 import Image from "next/image";
-// import { compareDesc, format, parseISO } from "date-fns";
 import { allPosts } from "contentlayer/generated";
 import { getMDXComponent } from "next-contentlayer/hooks";
 import Chat from "@/components/Chat";
@@ -16,6 +14,16 @@ export async function generateMetadata({
       (post) => post.url.split("/").slice(-1)[0] == params.slug
     ).title,
   };
+}
+
+
+export async function generateStaticParams() {
+  const posts = allPosts
+ 
+  return posts.map((post) => ({
+    level: post.level.toLowerCase(),
+    slug: post.url.split("/").slice(-1)[0],    
+  }))
 }
 
 function RoundedImage(props) {
