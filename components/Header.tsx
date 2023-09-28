@@ -55,7 +55,7 @@ const Header = () => {
             </li>
             <li className="px-2 py-1 border rounded-md border-red-300">
               <Link
-                href="/"
+                href="/signin"
                 className="text-gray-700  hover:text-red-500 transition-all ease-in-out duration-200"
               >
                 Sign In
@@ -106,7 +106,7 @@ const Header = () => {
             </li>
             <li className="px-2 py-1 border w-20 text-center rounded-md border-red-300">
               <Link
-                href="/"
+                href="/signin"
                 className="text-gray-700  hover:text-red-500 transition-all ease-in-out duration-200"
               >
                 Sign In
