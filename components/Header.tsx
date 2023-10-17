@@ -1,12 +1,15 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import classNames from "classnames";
+import { Session, User } from "next-auth";
+import UserAccountNav from "@/components/UserAccountNav"
 
-const Header = () => {
+const Header = ( { session  } : { session : Session | null}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+   
   return (
     <nav>
       <div className="my-3 flex justify-between items-center border-b border-red-100 py-2">
@@ -53,13 +56,13 @@ const Header = () => {
                 Resources
               </Link>
             </li>
-            <li className="px-2 py-1 border rounded-md border-red-300">
-              <Link
+            <li className={`${session?.user ? "" : "px-2 py-1 border rounded-md border-red-300"}` } >
+              {session?.user  ? <UserAccountNav /> : <Link
                 href="/signin"
                 className="text-gray-700  hover:text-red-500 transition-all ease-in-out duration-200"
               >
                 Sign In
-              </Link>
+              </Link>}
             </li>
           </ul>
         </div>
