@@ -1,8 +1,8 @@
- {
-      "rewrites": [
-        {
-          "source": "https://www.pickturkish.com/(.*)",
-          "destination": "https://pickturkish.com/\$1"
-        }
-      ]
-  }
+{
+ "rewrites" : [
+  {
+   "sources" : "https://www.pickturkish.com/(.*)",
+   "destination" : "https://pickturkish.com/\$1",
+}
+ ]
+}
