@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 import Chat from "@/components/Chat";
 
 export const metadata: Metadata = {
-  title: "All | Pick Turkish",
+  title: "All Blogs | Pick Turkish",
   description: "All posts of the blog of the website of Pick Turkish",
 };
 
