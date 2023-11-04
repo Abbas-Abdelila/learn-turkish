@@ -116,6 +116,13 @@ const Header = ( { session  } : { session : Session | null}) => {
               <Link
                 href="/"
                 className="text-red-500  hover:text-red-500 transition-all ease-in-out duration-200"
+                onClick={() => {
+                  setSelect({
+                    'home' : true,
+                    'blogs' : false,
+                    'resources' : false,
+                  })
+                }}
               >
                 Home
               </Link>
@@ -124,6 +131,13 @@ const Header = ( { session  } : { session : Session | null}) => {
               <Link
                 href="/posts/all"
                 className="text-gray-700  hover:text-red-500 transition-all ease-in-out duration-200"
+                onClick={() => {
+                  setSelect({
+                    'home' : false,
+                    'blogs' : true,
+                    'resources' : false,
+                  })
+                }}
               >
                 Blogs
               </Link>
@@ -132,6 +146,13 @@ const Header = ( { session  } : { session : Session | null}) => {
               <Link
                 href="/resources"
                 className="text-gray-700  hover:text-red-500 transition-all ease-in-out duration-200"
+                onClick={() => {
+                  setSelect({
+                    'home' : false,
+                    'blogs' : false,
+                    'resources' : true,
+                  })
+                }}
               >
                 Resources
               </Link>
