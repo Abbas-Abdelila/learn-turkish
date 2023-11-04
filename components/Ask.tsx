@@ -24,7 +24,7 @@ export default function Ask() {
           <path d="M21 12.1H3" />
           <path d="M15.1 18H3" />
         </svg>
-        <span className="text-zinc-900">Ask a question</span>
+        <span className="text-zinc-900">Ask AI <span className="text-red-500 font-medium">Delight</span></span>
       </Button>
     </section>
   )
