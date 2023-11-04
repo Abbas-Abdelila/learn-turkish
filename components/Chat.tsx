@@ -31,7 +31,7 @@ export default function Chat() {
   const [inputFocused, setInputFocused] = useState(false);
 
   return (
-    <div className="relative flex flex-col w-full max-w-md py-24 mx-auto stretch">
+    <div className="relative flex flex-col w-full max-w-md py-24 mx-auto stretch px-3">
       <h1 className=" text-xl font-semibold text-center mb-10">
         Ask AI <span className="text-bold text-red-500">Delight</span>
       </h1>
