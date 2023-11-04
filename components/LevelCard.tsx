@@ -14,9 +14,9 @@ const LevelCard = ({ title, desc, image }: Props) => {
         <Image
           src={`/images/${image}`}
           alt="Level Image"
-          width={256}
-          height={256}
-          className="object-fill rounded-lg"
+          fill
+          sizes="512px"
+          className="rounded-lg object-contain"
         />
       </div>
 

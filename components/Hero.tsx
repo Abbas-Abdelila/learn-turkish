@@ -8,10 +8,11 @@ const Hero = () => {
           Your One-Stop Turkish Learning Place.
         </h1>
       </div>
-      <div className="relative h-[100px] w-[100px] sm:h-[200px] sm:w-[200px]  md:h-[300px] md:w-[300px] lg:w-[380px] lg:h-[380px]">
+      <div className="relative w-24 h-24 sm:h-32 sm:w-48 md:h-48 md:w-64 lg:h-48 lg:w-60 ">
         <Image
           fill
-          className="rounded-xl md:rounded-2xl lg:rounded-3xl"
+          sizes="512px"
+          className="rounded-xl md:rounded-2xl lg:rounded-3xl object-contain"
           src="/logo.png"
           alt="Hero Image"
         />
