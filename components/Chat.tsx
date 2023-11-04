@@ -12,9 +12,21 @@ export default function Chat() {
     messageEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const isFirstRender = useRef(true);
+
+  
   useEffect(() => {
-    scrollToBottom();
-  }, [messages]);
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+  
+    return () => {
+      if(window.screenY > 1080)
+      scrollToBottom();
+    }
+  }, [messages])
+  
 
   const [inputFocused, setInputFocused] = useState(false);
 
@@ -73,6 +85,7 @@ export default function Chat() {
           </button>
         </div>
       </form>
+      
     </div>
   );
 }
