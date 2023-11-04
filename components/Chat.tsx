@@ -3,6 +3,7 @@
 import { useChat } from "ai/react";
 import { useEffect, useRef, useState } from "react";
 import Ask from "./Ask";
+import Close from "./CloseButton";
 
 export default function Chat() {
   const { messages, input, handleInputChange, handleSubmit, data } = useChat();
@@ -14,16 +15,9 @@ export default function Chat() {
     messageEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const isFirstRender = useRef(true);
-
   useEffect(() => {
-    if (isFirstRender.current) {
-      isFirstRender.current = false;
-      return;
-    }
-
     return () => {
-      if (window.screenY > 1080) scrollToBottom();
+      scrollToBottom();
     };
   }, [messages]);
 
@@ -33,6 +27,14 @@ export default function Chat() {
     <>
       {isChatOpen ? (
         <div className="relative flex flex-col w-full max-w-md py-24 mx-auto stretch px-3">
+          <div
+            className="close-btn flex justify-end items-center"
+            onClick={() => {
+              setIsChatOpen(false);
+            }}
+          >
+            <Close />
+          </div>
           <h1 className=" text-xl font-semibold text-center mb-10">
             Ask AI <span className="text-bold text-red-500">Delight</span>
           </h1>
@@ -61,7 +63,7 @@ export default function Chat() {
               </h4>
             </div>
           )}
-          <div ref={messageEndRef}></div>
+
           <form onSubmit={handleSubmit} autoComplete="on">
             <div
               className={`flex items-center space-between fixed bottom-0 w-full max-w-md p-2 mb-8  ${
@@ -96,9 +98,10 @@ export default function Chat() {
               </button>
             </div>
           </form>
+          <div ref={messageEndRef}></div>
         </div>
       ) : (
-        <div  onClick={() => setIsChatOpen(true)}>
+        <div onClick={() => setIsChatOpen(true)}>
           <Ask />
         </div>
       )}
