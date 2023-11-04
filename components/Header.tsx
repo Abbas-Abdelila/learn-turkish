@@ -28,7 +28,7 @@ const Header = ( { session  } : { session : Session | null}) => {
               alt="Pick Turkish Logo"
               width={32}
               height={32}
-              className="rounded-md cursor-pointer"
+              className="rounded-tr-sm cursor-pointer"
             />
 
             <h1 className="text-xl text-center font-medium text-red-500 cursor-pointer">
