@@ -115,13 +115,14 @@ const Header = ( { session  } : { session : Session | null}) => {
             <li className="px-2 py-1">
               <Link
                 href="/"
-                className="text-red-500  hover:text-red-500 transition-all ease-in-out duration-200"
+                className={`${select.home ? "text-red-500" : "text-gray-700" }  hover:text-red-500 transition-all ease-in-out duration-200`}
                 onClick={() => {
                   setSelect({
                     'home' : true,
                     'blogs' : false,
                     'resources' : false,
-                  })
+                  });
+                  setIsMenuOpen(false);
                 }}
               >
                 Home
@@ -130,13 +131,14 @@ const Header = ( { session  } : { session : Session | null}) => {
             <li className="px-2 py-1">
               <Link
                 href="/posts/all"
-                className="text-gray-700  hover:text-red-500 transition-all ease-in-out duration-200"
+                className={`${select.blogs ? "text-red-500" : "text-gray-700" }  hover:text-red-500 transition-all ease-in-out duration-200`}
                 onClick={() => {
                   setSelect({
                     'home' : false,
                     'blogs' : true,
                     'resources' : false,
-                  })
+                  });
+                  setIsMenuOpen(false);
                 }}
               >
                 Blogs
@@ -145,13 +147,14 @@ const Header = ( { session  } : { session : Session | null}) => {
             <li className="px-2 py-1">
               <Link
                 href="/resources"
-                className="text-gray-700  hover:text-red-500 transition-all ease-in-out duration-200"
+                className={`${select.resources ? "text-red-500" : "text-gray-700" }  hover:text-red-500 transition-all ease-in-out duration-200`}
                 onClick={() => {
                   setSelect({
                     'home' : false,
                     'blogs' : false,
                     'resources' : true,
-                  })
+                  });
+                  setIsMenuOpen(false);
                 }}
               >
                 Resources
@@ -161,6 +164,9 @@ const Header = ( { session  } : { session : Session | null}) => {
               <Link
                 href="/signin"
                 className="text-gray-700  hover:text-red-500 transition-all ease-in-out duration-200"
+                onClick={() => {
+                  setIsMenuOpen(false);
+                }}
               >
                 Sign In
               </Link>
