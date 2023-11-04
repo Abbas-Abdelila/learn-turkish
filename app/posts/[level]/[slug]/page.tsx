@@ -52,7 +52,7 @@ const PostPage = ({ params }: { params: { slug: string } }) => {
   }
   const Component = getMDXComponent(currentPost.body.code);
   return (
-    <div className="flex w-[95%] mx-auto divide-x divide-red-200">
+    <div className="flex w-[95%] mx-auto">
     <div className="flex justify-center p-5 md:w-[60%]">
       <article className="prose prose-slate prose-xl max-w-3xl prose-hr:border-red-200 prose-strong:text-red-500 ">
         <Component components={{ ...ComponentMap }} />
