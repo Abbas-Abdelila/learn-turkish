@@ -20,7 +20,7 @@ const Posts = () => {
       <div className="flex my-10 justify-start">
         <Categories selectedLevel="All" />
       </div>
-      <div className="flex flex-col md:flex-row md:space-x-10 divide-x divide-red-200">
+      <div className="flex flex-col md:flex-row md:space-x-10">
         <div className="md:w-[60%]">
           {posts.map((post) => {
             return (

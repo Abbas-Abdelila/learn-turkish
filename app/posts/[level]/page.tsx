@@ -25,7 +25,7 @@ const Levels = ({ params }: { params: { level: string } }) => {
       <div className="flex my-10 justify-start">
         <Categories selectedLevel={params.level.toLowerCase()} />
       </div>
-      <div className="flex flex-col md:flex-row md:space-x-10 divide-x divide-red-200">
+      <div className="flex flex-col md:flex-row md:space-x-10">
         <div className="md:w-[60%]">
           {posts.map((post) => {
             return (
