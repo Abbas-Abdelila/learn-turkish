@@ -26,7 +26,7 @@ export default function Chat() {
   return (
     <>
       {isChatOpen ? (
-        <div className="relative flex flex-col w-full max-w-md py-24 mx-auto stretch px-3">
+        <div className="relative flex flex-col w-full max-w-md mx-auto stretch px-3">
           <div
             className="close-btn flex justify-end items-center"
             onClick={() => {
