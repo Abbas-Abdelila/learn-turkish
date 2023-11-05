@@ -21,26 +21,63 @@ const Categories = ({ selectedLevel }: { selectedLevel: string }) => {
     //     <p className="px-2 md:px-4 mx-4 py-[2px] cursor-pointer  rounded-lg border border-gray-100 ">C1</p>
     //     <p className="px-2 md:px-4 mx-4 py-[2px] cursor-pointer  rounded-lg border border-gray-100 ">C2</p>
     // </div>
-    <div className="flex xs:max-w-sm max-w-none xs:overflow-x-scroll px-1 py-2 text-sm md:space-x-3 md:py-2 md:px-5 border border-gray-200 rounded-3xl md:text-lg">
+
+
+    <div className="flex overflow-x-auto scrollbar-hide space-x-4 px-4 py-2">
       {levels.map((level) => {
         return (
           <Link key={level} href={`/posts/${level.toLowerCase()}`}>
-          <p
+          <button
             key={level}
             onClick={() => handleSelect(level)}
-            className={`px-2 md:px-4 mx-4 py-[2px] cursor-pointer ${
+            className={`px-3 py-1 bg-gray-50 text-gray-700 ${
               selected === level.toLowerCase()
-                ? "border-2 border-red-400 rounded-lg"
-                : "border border-gray-100 rounded-lg"
+                ? "border-2 border-red-400 rounded-md"
+                : "border border-gray-200 rounded-md"
             }`}
           >
             {level}
-          </p>
+          </button>
           </Link>
         );
       })}
     </div>
+
   );
 };
 
 export default Categories;
+
+
+/**
+ * v0 by Vercel.
+ * @see https://v0.dev/t/P0an1nSpL8s
+ */
+// export default function Categories() {
+//   return (
+//     <>
+//       <div className="flex overflow-x-auto scrollbar-hide space-x-4 px-4 py-2">
+//         <button className="px-3 py-1 rounded-full bg-gray-200 text-gray-700 focus:outline-none focus:bg-gray-300">
+//           A1
+//         </button>
+//         <button className="px-3 py-1 rounded-full bg-gray-200 text-gray-700 focus:outline-none focus:bg-gray-300">
+//           A2
+//         </button>
+//         <button className="px-3 py-1 rounded-full bg-gray-200 text-gray-700 focus:outline-none focus:bg-gray-300">
+//           B1
+//         </button>
+//         <button className="px-3 py-1 rounded-full bg-gray-200 text-gray-700 focus:outline-none focus:bg-gray-300">
+//           B2
+//         </button>
+//         <button className="px-3 py-1 rounded-full bg-gray-200 text-gray-700 focus:outline-none focus:bg-gray-300">
+//           C1
+//         </button>
+//         <button className="px-3 py-1 rounded-full bg-gray-200 text-gray-700 focus:outline-none focus:bg-gray-300">
+//           C2
+//         </button>
+//       </div>
+      
+//     </>
+//   )
+// }
+
