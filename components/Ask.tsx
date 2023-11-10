@@ -7,9 +7,9 @@ import { Button } from "@/components/ui/button"
 export default function Ask() {
   return (
     <section className="fixed bottom-0 right-0 p-4">
-      <Button className="flex items-center space-x-2 bg-red-500 shadow-lg rounded-full py-2 px-4" variant="outline">
+      <Button className="flex items-center space-x-2 bg-red-500 shadow-lg rounded-full py-2 px-4" variant="ask">
         <svg
-          className=" w-6 h-6 text-white"
+          className=" w-6 h-6 text-white "
           fill="none"
           height="24"
           stroke="currentColor"
