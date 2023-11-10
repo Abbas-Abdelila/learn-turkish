@@ -1,3 +1,4 @@
+import EmailComponent from "@/components/EmailComponent";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Levels from "@/components/Levels";
@@ -19,15 +20,17 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className="flex flex-col w-[95%] mx-auto">
+    <main className="flex flex-col">
       <Hero />
-      <section>
+      <section className="w-[95%] mx-auto" >
         <Levels />
         <h1 className="text-3xl font-semibold text-center text-gray-800 my-10">
           Latest Posts{" "}
         </h1>
         <PostList />
+        
       </section>
+      <EmailComponent />
     </main>
   );
 }
