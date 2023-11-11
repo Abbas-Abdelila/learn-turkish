@@ -1,5 +1,13 @@
 import { MetadataRoute } from 'next'
- 
+import { allPosts } from "contentlayer/generated";
+
+const postUrls = allPosts.map((post) => ({
+  url: `https://www.pickturkish.com/posts/a1/${post.url.split("/").slice(-1)[0]}`,
+  lastModified: new Date(post.date),
+  changeFrequency: 'weekly' as const,
+  priority: 0.7,
+}));
+
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
@@ -20,5 +28,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.5,
     },
-  ]
+    ...postUrls,
+    ]
 }
