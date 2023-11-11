@@ -67,7 +67,7 @@ export default function EmailComponent() {
           <div className="flex flex-col justify-center space-y-4 text-center">
             <div className="space-y-2">
               <h1 className="bg-gradient-to-r p-3 from-gray-600 via-gray-800 to-red-500 bg-clip-text text-lg font-extrabold text-transparent sm:text-2xl md:text-3xl lg:text-4xl leading-normal">
-                Be the first to find out when new levels are released.
+                Discover new levels before anyone else!
               </h1>
             </div>
             <div className="w-full max-w-sm space-y-2 mx-auto">
