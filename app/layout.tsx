@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import Hero from "@/components/Hero";
 import { Analytics } from '@vercel/analytics/react';
 import Navbar from "@/components/Navbar";
+import { Toaster } from "@/components/ui/toaster"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,8 +23,9 @@ export default function RootLayout({
       <body className={inter.className}>
       <header className="flex flex-col w-[95%] mx-auto">
           <Navbar />
-        </header>
+      </header>
         {children}
+        <Toaster />
         <Analytics />
       </body>
     </html>
