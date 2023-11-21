@@ -3,6 +3,7 @@ import Image from "next/image";
 import { allPosts } from "contentlayer/generated";
 import { getMDXComponent } from "next-contentlayer/hooks";
 import Chat from "@/components/Chat";
+import BlogNavigation from "@/components/BlogNavigation";
 
 export async function generateMetadata({
   params,
@@ -16,14 +17,13 @@ export async function generateMetadata({
   };
 }
 
-
 export async function generateStaticParams() {
-  const posts = allPosts
- 
+  const posts = allPosts;
+
   return posts.map((post) => ({
     level: post.level.toLowerCase(),
-    slug: post.url.split("/").slice(-1)[0],    
-  }))
+    slug: post.url.split("/").slice(-1)[0],
+  }));
 }
 
 function RoundedImage(props) {
@@ -43,6 +43,13 @@ const PostPage = ({ params }: { params: { slug: string } }) => {
     // @ts-ignore
     (post) => post.url.split("/").slice(-1)[0] == params.slug
   );
+  const currentPostIndex = allPosts.findIndex(
+    // @ts-ignore
+    (post) => post.url.split("/").slice(-1)[0] == params.slug
+  );
+
+  
+
   if (!currentPost) {
     return (
       <div className="flex h-screen justify-center items-start text-3xl text-red-600">
@@ -53,16 +60,17 @@ const PostPage = ({ params }: { params: { slug: string } }) => {
   const Component = getMDXComponent(currentPost.body.code);
   return (
     <div className="flex w-[95%] mx-auto">
-    <div className="flex justify-center p-5 md:w-[60%]">
-      <article className="prose prose-slate prose-xl max-w-3xl prose-hr:border-red-200 prose-strong:text-red-500 ">
-        <Component components={{ ...ComponentMap }} />
-      </article>
-    </div>
-    <div className="hidden md:block md:w-[40%]">
-          <div className="sticky top-0">
-            <Chat />
-          </div>
+      <div className="flex justify-center p-5 md:w-[60%]">
+        <article className="prose prose-slate prose-xl max-w-3xl prose-hr:border-red-200 prose-strong:text-red-500 ">
+          <Component components={{ ...ComponentMap }} />
+          <BlogNavigation currentPostIndex={currentPostIndex}/>
+        </article>
+      </div>
+      <div className="hidden md:block md:w-[40%]">
+        <div className="sticky top-0">
+          <Chat />
         </div>
+      </div>
     </div>
   );
 };
