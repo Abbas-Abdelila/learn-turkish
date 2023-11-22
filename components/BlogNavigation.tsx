@@ -4,9 +4,9 @@ import { allPosts } from "@/.contentlayer/generated";
 
 export default function BlogNavigation( { currentPostIndex } : { currentPostIndex : number}) {
 
-  let previousPost, nextPost;
+  let previousPost = null, nextPost = null;
 
-  if (currentPostIndex - 1) {
+  if (currentPostIndex - 1 > 0) {
     previousPost = allPosts[currentPostIndex - 1];
   }
 
@@ -14,11 +14,14 @@ export default function BlogNavigation( { currentPostIndex } : { currentPostInde
     nextPost = allPosts[currentPostIndex + 1];
   }
 
+  const allTitles = allPosts.map((post) => post.title)
+  console.log("All titles array: \n", allTitles)
+
 
   return (
     <div className="flex justify-between items-center py-6 lg:py-16">
       <div className="flex flex-col">
-        <Link className="group inline-flex align-center" href={previousPost?.url || ""}>
+        <Link className={`group inline-flex align-center ${!previousPost ? "disabled opacity-40" : ""} `} href={previousPost?.url || "#"} passHref>
           <div className="flex items-center">
             <span><IconArrowleft className="h-6 w-6 mr-2" /></span>
             <p className="text-xl font-semibold text-zinc-600 dark:text-zinc-400">
@@ -31,7 +34,7 @@ export default function BlogNavigation( { currentPostIndex } : { currentPostInde
         </h2>
       </div>
       <div className="flex flex-col">
-        <Link className="group inline-flex align-center disabled" href={nextPost?.url || "#"}>
+        <Link className={`group inline-flex align-center ${!nextPost ? "disabled opacity-40" : ""} `} href={nextPost?.url || "#"}>
           <div className="flex items-center justify-end w-full">
             <p className="text-xl text-right font-semibold text-zinc-600 dark:text-zinc-400">
               Next Post
