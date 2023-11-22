@@ -6,7 +6,7 @@ export default function BlogNavigation( { currentPostIndex } : { currentPostInde
 
   let previousPost = null, nextPost = null;
 
-  if (currentPostIndex - 1 > 0) {
+  if (currentPostIndex - 1 >= 0) {
     previousPost = allPosts[currentPostIndex - 1];
   }
 
