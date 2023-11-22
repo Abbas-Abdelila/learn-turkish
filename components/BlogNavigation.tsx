@@ -14,10 +14,7 @@ export default function BlogNavigation( { currentPostIndex } : { currentPostInde
     nextPost = allPosts[currentPostIndex + 1];
   }
 
-  const allTitles = allPosts.map((post) => post.title)
-  console.log("All titles array: \n", allTitles)
-
-
+  
   return (
     <div className="flex justify-between items-center py-6 lg:py-16">
       <div className="flex flex-col">
