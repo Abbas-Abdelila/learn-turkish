@@ -16,7 +16,7 @@ export default function BlogNavigation( { currentPostIndex } : { currentPostInde
 
   
   return (
-    <div className="flex justify-between items-center py-6 lg:py-16">
+    <div className="flex justify-between gap-4 md:gap-8 items-center py-6 lg:py-16">
       <div className="flex flex-col">
         <Link className={`group inline-flex align-center ${!previousPost ? "disabled opacity-40" : ""} `} href={previousPost?.url || "#"} passHref>
           <div className="flex items-center">
