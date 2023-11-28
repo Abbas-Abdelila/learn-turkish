@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className="flex flex-col max-w-7xl mx-auto">
+    <main className="flex flex-col mx-auto max-w-[1800px]">
       <Hero />
       <section className="w-[95%] mx-auto" >
         <Levels />
