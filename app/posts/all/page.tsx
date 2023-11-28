@@ -16,7 +16,7 @@ const Posts = () => {
     compareDesc(new Date(a.date), new Date(b.date))
   );
   return (
-    <div className="flex flex-col space-y-4 w-[95%] mx-auto">
+    <div className="flex flex-col space-y-4 w-[95%] mx-auto max-w-7xl">
       <div className="flex my-10 justify-start">
         <Categories selectedLevel="All" />
       </div>
