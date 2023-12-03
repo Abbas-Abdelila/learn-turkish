@@ -61,7 +61,7 @@ export default function EmailComponent() {
   };
 
   return (
-    <section className="py-3 md:py-6 lg:py-8 xl:py-12 bg-zinc-100">
+    <section className="py-3 md:py-6 lg:py-8 xl:py-12 bg-[#f1f5f8]">
       <div className="container px-4 md:px-6">
         <div className="grid gap-6 items-center">
           <div className="flex flex-col justify-center space-y-4 text-center">
