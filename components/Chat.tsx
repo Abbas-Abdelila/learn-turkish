@@ -63,7 +63,7 @@ export default function Chat() {
               </h4>
             </div>
           )}
-
+          
           <form onSubmit={handleSubmit} autoComplete="on">
             <div
               className={`flex items-center space-between fixed bottom-0 w-full max-w-md p-2 mb-8  ${
