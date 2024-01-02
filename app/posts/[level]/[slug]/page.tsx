@@ -4,6 +4,7 @@ import { allPosts } from "contentlayer/generated";
 import { getMDXComponent } from "next-contentlayer/hooks";
 import Chat from "@/components/Chat";
 import BlogNavigation from "@/components/BlogNavigation";
+import Author from "@/components/Author";
 
 export async function generateMetadata({
   params,
@@ -63,6 +64,8 @@ const PostPage = ({ params }: { params: { slug: string } }) => {
       <div className="flex justify-center p-5 md:w-[60%]">
         <article className="prose prose-slate prose-xl max-w-3xl prose-hr:border-red-200 prose-strong:text-red-500 ">
           <Component components={{ ...ComponentMap }} />
+          <p className="text-xl md:text-2xl text-gray-800 font-semibold">Written by</p>
+          <Author />
           <BlogNavigation currentPostIndex={currentPostIndex}/>
         </article>
       </div>
