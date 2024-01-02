@@ -34,7 +34,12 @@ const Post = defineDocumentType(() => ({
       type: 'string',
       description: 'The image of the post',
       required: true,
-    }
+    }, 
+    author: {
+        type: 'string',
+        description: 'The author of the post',
+        required: false,
+    },
   },
   computedFields: {
     url: {
