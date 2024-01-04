@@ -49,7 +49,6 @@ const SignUp = () => {
   const router = useRouter();
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    
     const response = await fetch("/api/auth/user", {
       method: "POST",
       headers: {
@@ -58,17 +57,15 @@ const SignUp = () => {
       body: JSON.stringify({
         username: values.username,
         email: values.email,
-        password: values.password
+        password: values.password,
       }),
-    })
+    });
 
-    if(response.ok) {
+    if (response.ok) {
       router.push("/signin");
-    }
-    else {
+    } else {
       console.error("Registration not successful");
     }
-
   };
 
   return (
@@ -78,7 +75,9 @@ const SignUp = () => {
           onSubmit={form.handleSubmit(onSubmit)}
           className="space-y-2 w-[75%] md:w-[30%] border p-12 rounded-md"
         >
-          <h1 className="text-center text-2xl font-semibold border-b border-red-200 p-1 ">Create account</h1>
+          <h1 className="text-center text-2xl font-semibold border-b border-red-200 p-1 ">
+            Create account
+          </h1>
           <FormField
             control={form.control}
             name="username"
@@ -86,7 +85,11 @@ const SignUp = () => {
               <FormItem>
                 <FormLabel>Username</FormLabel>
                 <FormControl>
-                  <Input placeholder="maya" {...field} />
+                  <Input
+                    placeholder="username"
+                    className="dark:bg-[#262626] dark:text-white focus:!ring-1"
+                    {...field}
+                  />
                 </FormControl>
 
                 <FormMessage />
@@ -101,7 +104,11 @@ const SignUp = () => {
               <FormItem>
                 <FormLabel>Email</FormLabel>
                 <FormControl>
-                  <Input placeholder="email" {...field} />
+                  <Input
+                    placeholder="email"
+                    className="dark:bg-[#262626] dark:text-white focus:!ring-1"
+                    {...field}
+                  />
                 </FormControl>
 
                 <FormMessage />
@@ -116,7 +123,12 @@ const SignUp = () => {
               <FormItem>
                 <FormLabel>Password</FormLabel>
                 <FormControl>
-                  <Input placeholder="password" type="password" {...field} />
+                  <Input
+                    placeholder="password"
+                    type="password"
+                    className="dark:bg-[#262626] dark:text-white focus:!ring-1"
+                    {...field}
+                  />
                 </FormControl>
 
                 <FormMessage />
@@ -131,7 +143,12 @@ const SignUp = () => {
               <FormItem>
                 <FormLabel>Confirm Password</FormLabel>
                 <FormControl>
-                  <Input placeholder="Repeat password" type="password" {...field} />
+                  <Input
+                    placeholder="Repeat password"
+                    type="password"
+                    className="dark:bg-[#262626] dark:text-white focus:!ring-1"
+                    {...field}
+                  />
                 </FormControl>
 
                 <FormMessage />
@@ -139,12 +156,19 @@ const SignUp = () => {
             )}
           />
 
-          <Button type="submit" className="flex justify-center items-center mx-auto !mt-4 text-[16px]">Sign Up</Button>
+          <Button
+            type="submit"
+            className="flex justify-center items-center mx-auto !mt-4 text-[16px]"
+          >
+            Sign Up
+          </Button>
           <p className="text-center text-md">
             Already have an account?{" "}
             <Link href="/signin">
               {" "}
-              <span className="text-red-500 cursor-pointer font-medium">Sign in</span>
+              <span className="text-red-500 cursor-pointer font-medium">
+                Sign in
+              </span>
             </Link>
           </p>
         </form>

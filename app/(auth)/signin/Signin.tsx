@@ -15,7 +15,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { signIn } from 'next-auth/react'
+import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 const formSchema = z.object({
@@ -34,22 +34,20 @@ const LogIn = () => {
 
   const router = useRouter();
 
-  const onSubmit =  async (values: z.infer<typeof formSchema>) => {
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
     const { email, password } = values;
-    const signInData = await signIn( 'credentials', {
+    const signInData = await signIn("credentials", {
       email,
       password,
       redirect: false,
-    })
+    });
 
-    if(signInData?.error) {
-      console.log(signInData.error)
-    }
-    else {
+    if (signInData?.error) {
+      console.log(signInData.error);
+    } else {
       router.refresh();
       router.push("/feed");
     }
-
   };
 
   return (
@@ -69,7 +67,11 @@ const LogIn = () => {
               <FormItem>
                 <FormLabel>Email</FormLabel>
                 <FormControl>
-                  <Input placeholder="your email" {...field} />
+                  <Input
+                    placeholder="email"
+                    className="dark:bg-[#262626] dark:text-white focus:!ring-1"
+                    {...field}
+                  />
                 </FormControl>
 
                 <FormMessage />
@@ -84,7 +86,12 @@ const LogIn = () => {
               <FormItem>
                 <FormLabel>Password</FormLabel>
                 <FormControl>
-                  <Input placeholder="your password" type="password" {...field} />
+                  <Input
+                    placeholder="password"
+                    type="password"
+                    className="dark:bg-[#262626] dark:text-white focus:!ring-1"
+                    {...field}
+                  />
                 </FormControl>
 
                 <FormMessage />
