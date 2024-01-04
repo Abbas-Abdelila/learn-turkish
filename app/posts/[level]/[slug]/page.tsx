@@ -62,9 +62,9 @@ const PostPage = ({ params }: { params: { slug: string } }) => {
   return (
     <div className="flex w-[95%] mx-auto max-w-[1800px]">
       <div className="flex justify-center p-5 md:w-[60%]">
-        <article className="prose prose-slate prose-xl max-w-3xl prose-hr:border-red-200 prose-strong:text-red-500 ">
+        <article className="prose dark:prose-invert prose-slate prose-xl max-w-3xl prose-hr:border-red-200 prose-strong:text-red-500 dark:text-white">
           <Component components={{ ...ComponentMap }} />
-          <p className="text-xl md:text-2xl text-gray-800 font-semibold">Written by</p>
+          <p className="text-xl md:text-2xl text-gray-800 dark:text-white font-semibold">Written by</p>
           <Author />
           <BlogNavigation currentPostIndex={currentPostIndex}/>
         </article>
