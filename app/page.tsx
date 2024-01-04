@@ -1,8 +1,6 @@
 import EmailComponent from "@/components/EmailComponent";
-import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Levels from "@/components/Levels";
-import Post from "@/components/Post";
 import PostList from "@/components/PostList";
 import { Metadata } from "next";
 // import { Noto_Sans_Cypriot } from "next/font/google";
@@ -24,9 +22,9 @@ export default function Home() {
       <Hero />
       <section className="w-[95%] mx-auto" >
         <Levels />
-        <h1 className="text-3xl font-semibold text-center text-gray-800 my-10">
+        <h2 className="text-3xl font-semibold text-center text-gray-800 my-10 dark:text-white">
           Latest Posts{" "}
-        </h1>
+        </h2>
         <PostList />
         
       </section>
