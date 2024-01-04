@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { compareDesc, format, parseISO } from "date-fns";
 import { allPosts, Post } from "contentlayer/generated";
-import { getMDXComponent } from "next-contentlayer/hooks";
 import Categories from "@/components/Categories";
 import Chat from "@/components/Chat";
 
@@ -21,7 +20,7 @@ const Levels = ({ params }: { params: { level: string } }) => {
     .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)));
 
   return (
-    <div className="flex flex-col space-y-4 w-[95%] mx-auto">
+    <div className="flex flex-col space-y-4 w-[95%] mx-auto mt-16">
       <div className="flex my-10 justify-start">
         <Categories selectedLevel={params.level.toLowerCase()} />
       </div>
@@ -31,11 +30,11 @@ const Levels = ({ params }: { params: { level: string } }) => {
             return (
               <div key={post._id} className="flex flex-col mb-5">
                 <Link href={`${params.level}/${post.url}`}>
-                  <h1 className="text-xl text-slate-800 font-medium hover:text-blue-700 hover:underline underline-[1px] decoration-red-200 underline-offset-[6px] cursor-pointer">
+                  <h3 className="text-xl text-slate-800 dark:text-white font-medium hover:text-blue-700 hover:underline underline-[1px] decoration-red-200 underline-offset-[6px] cursor-pointer">
                     {post.title}
-                  </h1>
+                  </h3>
                 </Link>
-                <time className="text-sm text-slate-700">
+                <time className="text-sm text-slate-700 dark:text-white">
                   {format(parseISO(post.date), "LLLL d, yyyy")}
                 </time>
               </div>

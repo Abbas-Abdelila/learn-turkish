@@ -16,7 +16,7 @@ const Posts = () => {
     compareDesc(new Date(a.date), new Date(b.date))
   );
   return (
-    <div className="flex flex-col space-y-4 w-[95%] mx-auto max-w-[1800px]">
+    <div className="flex flex-col space-y-4 w-[95%] mx-auto max-w-[1800px] mt-16">
       <div className="flex my-10 justify-start">
         <Categories selectedLevel="All" />
       </div>
@@ -26,11 +26,11 @@ const Posts = () => {
             return (
               <div key={post._id} className="flex flex-col mb-5 ">
                 <Link href={`${post.level.toLowerCase()}/${post.url}`}>
-                  <h1 className="text-xl text-slate-800 font-medium hover:text-blue-700 hover:underline underline-[1px] decoration-red-200 underline-offset-[6px] cursor-pointer">
+                  <h1 className="text-xl text-slate-800 dark:text-white font-medium hover:text-blue-700 hover:underline underline-[1px] decoration-red-200 underline-offset-[6px] cursor-pointer">
                     {post.title}
                   </h1>
                 </Link>
-                <time className="text-sm text-slate-700">
+                <time className="text-sm text-slate-700 dark:text-white">
                   {format(parseISO(post.date), "LLLL d, yyyy")}
                 </time>
               </div>
