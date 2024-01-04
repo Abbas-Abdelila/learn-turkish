@@ -23,7 +23,9 @@ export default function Chat() {
 
   const [inputFocused, setInputFocused] = useState(false);
 
+
   return (
+    
     <>
       {isChatOpen ? (
         <div className="relative flex flex-col w-full max-w-md mx-auto stretch px-3">
@@ -50,7 +52,9 @@ export default function Chat() {
                     Delight<span className="mx-1">:</span>
                   </span>
                 )}
+                <article className="prose dark:prose-invert prose-slate">
                 {m.content}
+                </article>
               </div>
             ))
           ) : (
