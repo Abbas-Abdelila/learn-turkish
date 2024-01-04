@@ -32,7 +32,7 @@ const Categories = ({ selectedLevel }: { selectedLevel: string }) => {
             onClick={() => handleSelect(level)}
             className={`px-3 py-1 bg-gray-50 text-gray-700 ${
               selected === level.toLowerCase()
-                ? "border-2 border-red-400 rounded-md"
+                ? "border-2 border-red-400 rounded-md dark:border-4 dark:border-red-500 dark:shadow-2xl"
                 : "border border-gray-200 rounded-md"
             }`}
           >
