@@ -70,10 +70,10 @@ export default function Chat() {
                 inputFocused
                   ? "border-2 border-red-500"
                   : "border border-red-400"
-              }  rounded shadow-xl opacity-100 bg-white`}
+              }  rounded shadow-xl opacity-100 bg-white dark:bg-[#121212] dark:border-4 dark:border-red-500 dark:shadow-2xl]`}
             >
               <input
-                className="outline-none w-full"
+                className="outline-none w-full bg:white dark:bg-[#121212] dark:text-white dark:placeholder-gray-400 dark:placeholder-opacity-50"
                 value={input}
                 placeholder="Say something..."
                 onChange={handleInputChange}
@@ -87,7 +87,7 @@ export default function Chat() {
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="w-8 h-8 cursor-pointer"
+                  className="w-8 h-8 cursor-pointer dark:text-white"
                 >
                   <path
                     strokeLinecap="round"
