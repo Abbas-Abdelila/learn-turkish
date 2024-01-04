@@ -3,8 +3,8 @@ import Link from "next/link";
 
 const Levels = () => {
   return (
-    <div className="bg-[#f1f5f8] sm:mx-auto p-4 rounded-3xl">
-      <h1 className="text-center text-3xl md:text-4xl text-gray-800 my-16 font-bold">
+    <div className="bg-[#f1f5f8] dark:bg-[#262626] sm:mx-auto p-4 rounded-3xl">
+      <h1 className="text-center text-3xl md:text-4xl text-gray-800 dark:text-white my-16 font-bold">
         Explainer Articles
       </h1>
       <div className="grid sm:grid-cols-2 md:grid-cols-3 md:gap-6 lg:gap-12 justify-start mx-auto md:justify-center ">
