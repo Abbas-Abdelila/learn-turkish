@@ -7,9 +7,9 @@ import { Button } from "@/components/ui/button"
 export default function Close() {
   return (
     <div className="mt-4 mb-8">
-      <Button aria-label="Close chatbot" variant="outline" >
+      <Button className="dark:bg-[#121212] hover:!bg-white transition-transform duration-150" aria-label="Close chatbot" variant="outline" >
         <svg
-          className=" h-6 w-6"
+          className=" h-6 w-6 dark:text-red-500"
           fill="none"
           height="24"
           stroke="currentColor"
