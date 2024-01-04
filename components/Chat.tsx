@@ -52,9 +52,7 @@ export default function Chat() {
                     Delight<span className="mx-1">:</span>
                   </span>
                 )}
-                <article className="prose dark:prose-invert prose-slate">
                 {m.content}
-                </article>
               </div>
             ))
           ) : (
