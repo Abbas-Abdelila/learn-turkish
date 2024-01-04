@@ -1,10 +1,11 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import classNames from "classnames";
 import { Session, User } from "next-auth";
 import UserAccountNav from "@/components/UserAccountNav"
+import ThemeButton from "./ThemeButton";
 
 const Header = ( { session  } : { session : Session | null}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,7 +44,7 @@ const Header = ( { session  } : { session : Session | null}) => {
             <li className="px-2 py-1">
               <Link
                 href="/"
-                className={`${select.home ? "text-red-500" : "text-gray-700" }  hover:text-red-500 transition-all ease-in-out duration-200`}
+                className={`${select.home ? "text-red-500" : "text-gray-700 dark:text-white" }  hover:text-red-500 transition-all ease-in-out duration-200`}
                 onClick={() => {
                   setSelect({
                     'home' : true,
@@ -58,7 +59,7 @@ const Header = ( { session  } : { session : Session | null}) => {
             <li className="px-2 py-1">
               <Link
                 href="/posts/all"
-                className={`${select.blogs ? "text-red-500" : "text-gray-700" }  hover:text-red-500 transition-all ease-in-out duration-200`}
+                className={`${select.blogs ? "text-red-500" : "text-gray-700 dark:text-white" }  hover:text-red-500 transition-all ease-in-out duration-200`}
                 onClick={() => {
                   setSelect({
                     'home' : false,
@@ -73,7 +74,7 @@ const Header = ( { session  } : { session : Session | null}) => {
             <li className="px-2 py-1">
               <Link
                 href="/resources"
-                className={`${select.resources ? "text-red-500" : "text-gray-700" }  hover:text-red-500 transition-all ease-in-out duration-200`}
+                className={`${select.resources ? "text-red-500" : "text-gray-700 dark:text-white" }  hover:text-red-500 transition-all ease-in-out duration-200`}
                 onClick={() => {
                   setSelect({
                     'home' : false,
@@ -85,10 +86,13 @@ const Header = ( { session  } : { session : Session | null}) => {
                 Resources
               </Link>
             </li>
+            <li className="px-2 py-1">
+            <ThemeButton />
+            </li>
             <li className={`${session?.user ? "" : "px-2 py-1 border rounded-md border-red-300"}` } >
               {session?.user  ? <UserAccountNav /> : <Link
                 href="/signin"
-                className="text-gray-700  hover:text-red-500 transition-all ease-in-out duration-200"
+                className="text-gray-700 dark:text-white  hover:text-red-500 transition-all ease-in-out duration-200"
               >
                 Sign In
               </Link>}
@@ -115,7 +119,7 @@ const Header = ( { session  } : { session : Session | null}) => {
             <li className="px-2 py-1">
               <Link
                 href="/"
-                className={`${select.home ? "text-red-500" : "text-gray-700" }  hover:text-red-500 transition-all ease-in-out duration-200`}
+                className={`${select.home ? "text-red-500" : "text-gray-700 dark:text-white" }  hover:text-red-500 transition-all ease-in-out duration-200`}
                 onClick={() => {
                   setSelect({
                     'home' : true,
@@ -131,7 +135,7 @@ const Header = ( { session  } : { session : Session | null}) => {
             <li className="px-2 py-1">
               <Link
                 href="/posts/all"
-                className={`${select.blogs ? "text-red-500" : "text-gray-700" }  hover:text-red-500 transition-all ease-in-out duration-200`}
+                className={`${select.blogs ? "text-red-500" : "text-gray-700 dark:text-white" }  hover:text-red-500 transition-all ease-in-out duration-200`}
                 onClick={() => {
                   setSelect({
                     'home' : false,
@@ -147,7 +151,7 @@ const Header = ( { session  } : { session : Session | null}) => {
             <li className="px-2 py-1">
               <Link
                 href="/resources"
-                className={`${select.resources ? "text-red-500" : "text-gray-700" }  hover:text-red-500 transition-all ease-in-out duration-200`}
+                className={`${select.resources ? "text-red-500" : "text-gray-700 dark:text-white" }  hover:text-red-500 transition-all ease-in-out duration-200`}
                 onClick={() => {
                   setSelect({
                     'home' : false,
@@ -160,10 +164,13 @@ const Header = ( { session  } : { session : Session | null}) => {
                 Resources
               </Link>
             </li>
+            <li className="px-2 py-1">
+            <ThemeButton />
+            </li>
             <li className="px-2 py-1 border w-20 text-center rounded-md border-red-300">
               <Link
                 href="/signin"
-                className="text-gray-700  hover:text-red-500 transition-all ease-in-out duration-200"
+                className="text-gray-700 dark:text-white  hover:text-red-500 transition-all ease-in-out duration-200"
                 onClick={() => {
                   setIsMenuOpen(false);
                 }}
