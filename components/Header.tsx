@@ -13,8 +13,8 @@ const Header = ( { session  } : { session : Session | null}) => {
 
    
   return (
-    <nav>
-      <div className="my-3 flex justify-between items-center border-b border-red-100 py-2">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-[#121212] border-b border-red-100">
+      <div className="my-3 flex justify-between items-center py-1">
         <Link href="/">
           <div className="left flex space-x-4 items-center px-2"
           onClick={() => {
