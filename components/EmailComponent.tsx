@@ -14,7 +14,7 @@ export default function EmailComponent() {
   });
 
   const [isLoading, setIsLoading] = useState(false);
-  const { toast } = useToast();
+  const { toast } : { toast: (arg: any) => void } = useToast();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -67,10 +67,10 @@ export default function EmailComponent() {
           <div className="flex flex-col justify-center space-y-4 text-center">
             <div className="space-y-2">
               <h1 className="bg-gradient-to-r p-3 from-gray-600 via-gray-800 to-red-500 bg-clip-text text-lg font-extrabold text-transparent sm:text-2xl md:text-3xl lg:text-4xl dark:text-white leading-normal">
-                Discover new levels before anyone else!
+                Access new levels by joining the waitlist!
               </h1>
             </div>
-            <div className="w-full max-w-sm space-y-2 mx-auto">
+            <div className="w-full flex justify-center  space-y-2 mx-auto">
               <Form {...form}>
                 <form
                   onSubmit={form.handleSubmit(onSubmit)}
@@ -83,8 +83,8 @@ export default function EmailComponent() {
                       <FormItem>
                         <FormControl>
                           <Input
-                            className="max-w-lg flex-1 bg-white text-black border-gray-900"
-                            placeholder="Enter your email"
+                            className="w-64 md:w-80 flex-1 bg-white text-black border-gray-900 dark:border-red-500 dark:border-4 dark:shadow-2xl dark:focus:border-none dark:bg-[#262626] dark:text-white focus:!ring-1"
+                            placeholder="Email"
                             type="email"
                             {...field}
                           />
@@ -101,7 +101,7 @@ export default function EmailComponent() {
                     onSubmit={form.handleSubmit(onSubmit)}
                     onClick={form.handleSubmit(onSubmit)}
                   >
-                    {isLoading ? "Sending..." : "Notify Me"}
+                    {isLoading ? "Sending..." : "Join"}
                   </Button>
                 </form>
               </Form>
