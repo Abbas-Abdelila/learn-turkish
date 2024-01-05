@@ -11,10 +11,11 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }) {
+  const currentPost = allPosts.find(
+    (post) => post.url.split("/").slice(-1)[0] == params.slug
+  )
   return {
-    title: allPosts.find(
-      (post) => post.url.split("/").slice(-1)[0] == params.slug
-    ).title,
+    title: currentPost?.title,
   };
 }
 
