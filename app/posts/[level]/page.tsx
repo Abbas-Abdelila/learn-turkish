@@ -34,7 +34,7 @@ const Levels = ({ params }: { params: { level: string } }) => {
                     {post.title}
                   </h3>
                 </Link>
-                <time className="text-sm text-slate-700 dark:text-white">
+                <time className="text-sm text-slate-700 dark:text-[#8f8f8f]">
                   {format(parseISO(post.date), "LLLL d, yyyy")}
                 </time>
               </div>
