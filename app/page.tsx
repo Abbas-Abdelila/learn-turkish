@@ -7,7 +7,8 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Pick Turkish",
-  description: "Learn Turkish with Pick Turkish",
+  description:
+    "Embark on your journey to learn Turkish at Pick Turkish. Our platform provides engaging explainer articles and interactive chatbots powered by advanced AI models. Explore Turkish culture, history, and language with ease. Start your Turkish adventure today!",
 };
 
 // const Noto = Noto_Sans_Cypriot({
@@ -20,13 +21,12 @@ export default function Home() {
   return (
     <main className="flex flex-col mx-auto max-w-[1800px] mt-16">
       <Hero />
-      <section className="w-[95%] mx-auto" >
+      <section className="w-[95%] mx-auto">
         <Levels />
         <h2 className="text-3xl font-semibold text-center text-gray-800 my-10 dark:text-white">
           Latest Posts{" "}
         </h2>
         <PostList />
-        
       </section>
       <EmailComponent />
     </main>
