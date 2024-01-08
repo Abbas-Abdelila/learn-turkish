@@ -102,7 +102,7 @@ const Header = ( { session  } : { session : Session | null}) => {
 
         {/* Mobile Navbar */}
         <div
-          className={classNames(`tham tham-e-squeeze tham-w-6 sm:hidden`, {
+          className={classNames(`tham tham-e-squeeze tham-w-6 sm:hidden mx-3`, {
             "tham-active": isMenuOpen,
           })}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -114,7 +114,7 @@ const Header = ( { session  } : { session : Session | null}) => {
       </div>
 
       {isMenuOpen && (
-        <div className="right flex flex-col sm:hidden px-2">
+        <div className="right flex flex-col sm:hidden px-2 pb-5">
           <ul className="flex flex-col space-y-5 md:space-y-10 ">
             <li className="px-2 py-1">
               <Link
