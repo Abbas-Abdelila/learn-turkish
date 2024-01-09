@@ -16,6 +16,7 @@ export async function generateMetadata({
   )
   return {
     title: currentPost?.title,
+    desc: currentPost?.desc
   };
 }
 
