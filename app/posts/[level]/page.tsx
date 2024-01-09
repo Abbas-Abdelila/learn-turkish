@@ -11,6 +11,7 @@ export async function generateMetadata({
 }) {
   return {
     title: `${params.level.toUpperCase()} | Pick Turkish`,
+    desc: `${params.level.toUpperCase()} Level Articles}`
   };
 }
 
