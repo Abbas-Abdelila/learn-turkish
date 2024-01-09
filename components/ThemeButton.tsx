@@ -7,16 +7,16 @@ const ThemeButton = () => {
   const { theme, setTheme } = useTheme();
 
   const switchTheme = () => {
-    if (theme === "dark") {
-      setTheme("light");
-    } else {
+    if (theme === "light") {
       setTheme("dark");
+    } else {
+      setTheme("light");
     }
   };
 
   return (
     <button onClick={() => switchTheme()}>
-      {theme === "dark" ? <Icons.sun /> : <Icons.moon />}
+      {theme === "light" ? <Icons.moon /> : <Icons.sun />}
     </button>
   );
 };
