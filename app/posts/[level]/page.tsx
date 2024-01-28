@@ -3,6 +3,7 @@ import { compareDesc, format, parseISO } from "date-fns";
 import { allPosts, Post } from "contentlayer/generated";
 import Categories from "@/components/Categories";
 import Chat from "@/components/Chat";
+import EmailComponent from "@/components/EmailComponent";
 
 export async function generateMetadata({
   params,
@@ -27,7 +28,7 @@ const Levels = ({ params }: { params: { level: string } }) => {
       </div>
       <div className="flex flex-col md:flex-row md:space-x-10">
         <div className="md:w-[60%]">
-          {posts.map((post) => {
+          {posts.length != 0 ? posts.map((post) => {
             return (
               <div key={post._id} className="flex flex-col mb-5">
                 <Link href={`${params.level}/${post.url}`}>
@@ -40,7 +41,7 @@ const Levels = ({ params }: { params: { level: string } }) => {
                 </time>
               </div>
             );
-          })}
+          }) : <EmailComponent />}
         </div>
         <div className="hidden md:block md:w-[40%]">
           <div className="sticky top-0">
