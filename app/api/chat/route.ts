@@ -1,35 +1,29 @@
-import { GoogleGenerativeAI } from '@google/generative-ai';
-import { GoogleGenerativeAIStream, Message, StreamingTextResponse } from 'ai';
- 
-const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY || '');
- 
-// IMPORTANT! Set the runtime to edge
-export const runtime = 'edge';
+import OpenAI from 'openai'
+import { OpenAIStream, StreamingTextResponse } from 'ai'
 
-export const preferredRegion = ['iad1', 'sin1'];
- 
-// convert messages from the Vercel AI SDK Format to the format
-// that is expected by the Google GenAI SDK
-const buildGoogleGenAIPrompt = (messages: Message[]) => ({
-  contents: messages
-    .filter(message => message.role === 'user' || message.role === 'assistant')
-    .map(message => ({
-      role: message.role === 'user' ? 'user' : 'model',
-      parts: [{ text: message.content }],
-    })),
-});
- 
-export async function POST(req: Request) {
-  // Extract the `prompt` from the body of the request
-  const { messages } = await req.json();
- 
-  const geminiStream = await genAI
-    .getGenerativeModel({ model: 'gemini-pro' })
-    .generateContentStream(buildGoogleGenAIPrompt(messages));
- 
-  // Convert the response into a friendly text-stream
-  const stream = GoogleGenerativeAIStream(geminiStream);
- 
-  // Respond with the stream
-  return new StreamingTextResponse(stream);
+const openai = new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY || '',
+})
+
+// export const runtime = 'edge';
+
+export async function POST(req : Request) {
+
+    const { messages } = await req.json();
+
+    const response = await openai.chat.completions.create({
+        model: 'gpt-3.5-turbo',
+        stream: true,
+
+
+        messages : [
+            { role: 'system', content: 'You are a helpful, creative, clever, and very friendly Turkish language tutor. When you get questions related to Turkish language, you answer them in a very helpful way. When the question is not related to Turkish culture and language first tell You would enjoy to answer questions related to Turkish language and culture but you are gonna make exceptions for them and move one and answer their question concisely' },
+            ...messages,
+        ],
+
+    });
+
+    const stream = OpenAIStream(response);
+
+    return new StreamingTextResponse(stream);
 }
