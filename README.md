@@ -1,34 +1,53 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Pick Turkish: A Comprehensive Guide to Learning Turkish
+
+## Introduction
+
+Welcome to Pick Turkish, your ultimate destination for learning the Turkish language. This project is designed to provide a platform for language learners to immerse themselves in the Turkish language through interactive content and resources. With a focus on delivering high-quality, engaging content, Pick Turkish aims to make learning Turkish accessible and enjoyable for everyone.
+
+## Features
+
+- **Interactive Learning Content**: Dive into a vast collection of articles, quizzes, and interactive exercises to enhance your understanding of the Turkish language.
+- **AI-Powered Tutor**: Engage with our AI-powered tutor, leveraging the capabilities of Delight AI to answer your questions and provide personalized learning experiences.
+
+
+
+## Technologies
+
+Pick Turkish is built with cutting-edge technologies to ensure a smooth and efficient learning experience:
+
+- **Next.js**: For server-side rendering and routing, providing a fast and dynamic web application.
+- **Prisma**: For database operations, ensuring efficient data management and storage.
+- **Tailwind CSS**: For styling, offering a utility-first CSS framework to create beautiful and responsive designs.
+- **Next-Auth**: For authentication, providing secure and easy-to-use authentication solutions.
+- **Google Generative AI**: Integrated for AI-powered content generation and question answering.
+- **OpenAI**: Utilized for advanced AI functionalities, enhancing the learning experience with personalized tutoring.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- Node.js and npm installed on your machine.
+- A basic understanding of JavaScript or TypeScript.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository:
+   ```
+   git clone https://github.com/Abbas-Abdelila/learn-turkish.git
+   ```
+2. Navigate to the project directory:
+   ```
+   cd learn-turkish
+   ```
+3. Install the dependencies:
+   ```
+   npm install
+   ```
+4. Start the development server:
+   ```
+   npm run dev
+   ```
+5. Open your browser and navigate to `http://localhost:3000` to view the application.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
