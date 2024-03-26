@@ -5,6 +5,7 @@ import { getMDXComponent } from "next-contentlayer/hooks";
 import Chat from "@/components/Chat";
 import BlogNavigation from "@/components/BlogNavigation";
 import Author from "@/components/Author";
+import Link from "next/link";
 
 export async function generateMetadata({
   params,
@@ -39,7 +40,11 @@ function RoundedImage(props) {
   );
 }
 
-const ComponentMap = { Image: RoundedImage };
+function CustomLink(props) {
+  return <Link href={props.url} target="_blank" >{props.name}</Link>
+}
+
+const ComponentMap = { Image: RoundedImage, CustomLink };
 
 const PostPage = ({ params }: { params: { slug: string } }) => {
   const currentPost = allPosts.find(
