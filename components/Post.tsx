@@ -33,7 +33,7 @@ const PostComponent = ({ title, image, desc, url, level }: PostProps) => {
           </h3>
         </Link>
         <p className="font-normal text-gray-600 text-md line-clamp-2 dark:text-[#8f8f8f]">{desc}</p>
-        <h3 className="text-right flex-1 dark:text-[#8f8f8f]">A1</h3>
+        <h3 className="text-right flex-1 dark:text-[#8f8f8f]">{level}</h3>
       </div>
     </div>
   );
