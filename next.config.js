@@ -17,6 +17,9 @@ const nextConfig = {
     // !! WARN !!
     ignoreBuildErrors: true,
   },
+  images: {
+    domains: ["images.playground.com"],
+  },
 };
 
 module.exports = withContentlayer(nextConfig);
