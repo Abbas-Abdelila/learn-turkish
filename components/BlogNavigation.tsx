@@ -21,25 +21,25 @@ export default function BlogNavigation( { currentPostIndex } : { currentPostInde
         <Link className={`group inline-flex align-center ${!previousPost ? "disabled opacity-40" : ""} `} href={previousPost?.url || "#"} passHref>
           <div className="flex items-center">
             <span><IconArrowleft className="h-6 w-6 mr-2" /></span>
-            <p className="text-xl font-semibold text-zinc-600 dark:text-zinc-400">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold text-zinc-600 dark:text-zinc-400">
               Previous Post
             </p>
           </div>
         </Link>
-        <h2 className="text-xl font-bold text-zinc-900 dark:text-zinc-200">
+        <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-zinc-900 dark:text-zinc-200">
           {previousPost?.title}
         </h2>
       </div>
       <div className="flex flex-col">
         <Link className={`group inline-flex align-center ${!nextPost ? "disabled opacity-40" : ""} `} href={nextPost?.url || "#"}>
           <div className="flex items-center justify-end w-full">
-            <p className="text-xl text-right font-semibold text-zinc-600 dark:text-zinc-400">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-right font-semibold text-zinc-600 dark:text-zinc-400">
               Next Post
             </p>
             <span><IconArrowright className="h-6 w-6 ml-2" /></span>
           </div>
         </Link>
-          <h2 className="text-xl font-bold text-zinc-900 dark:text-zinc-200">
+          <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-zinc-900 dark:text-zinc-200">
             {nextPost?.title}
           </h2>
       </div>
