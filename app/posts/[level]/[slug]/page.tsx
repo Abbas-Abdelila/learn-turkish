@@ -6,6 +6,7 @@ import Chat from "@/components/Chat";
 import BlogNavigation from "@/components/BlogNavigation";
 import Author from "@/components/Author";
 import Link from "next/link";
+import { ImageGrid } from "@/components/component/image-grid";
 
 export async function generateMetadata({
   params,
@@ -44,7 +45,7 @@ function CustomLink(props) {
   return <Link href={props.url} target="_blank" >{props.name}</Link>
 }
 
-const ComponentMap = { Image: RoundedImage, CustomLink };
+const ComponentMap = { Image: RoundedImage, CustomLink, ImageGrid };
 
 const PostPage = ({ params }: { params: { slug: string } }) => {
   const currentPost = allPosts.find(
