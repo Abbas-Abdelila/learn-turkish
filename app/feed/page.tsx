@@ -9,7 +9,7 @@ const Feed = async () => {
     <>
       <div className="h-screen flex justify-center items-center text-2xl">
         Feed me more {session?.user.username} 🍔
-        UserID: {session?.user.id} 
+        UserID: {session?.user.userId} 
       </div>
     </>
   );
