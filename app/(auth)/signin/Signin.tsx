@@ -17,13 +17,20 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 const formSchema = z.object({
   email: z.string().email("Invalid Email") || z.string().min(3),
 
   password: z.string().max(100),
 });
+
+
+
 const LogIn = () => {
+
+  const [loading, setLoading] = useState(false);
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -35,6 +42,7 @@ const LogIn = () => {
   const router = useRouter();
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    setLoading(true);
     const { email, password } = values;
     const signInData = await signIn("credentials", {
       email,
@@ -45,6 +53,7 @@ const LogIn = () => {
     if (signInData?.error) {
       console.log(signInData.error);
     } else {
+      setLoading(false);
       router.refresh();
       router.push("/feed");
     }
@@ -103,14 +112,14 @@ const LogIn = () => {
             type="submit"
             className="flex justify-center items-center mx-auto !mt-4 text-[16px] "
           >
-            Login
+            {loading? 'Loading...' : 'Log in'}
           </Button>
           <p className="text-center text-md">
             Don't have an account?{" "}
             <Link href="/signup">
               {" "}
               <span className="text-red-500 cursor-pointer font-medium">
-                Sign up
+              Sign up
               </span>
             </Link>
           </p>

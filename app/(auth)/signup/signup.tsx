@@ -16,6 +16,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { useState } from "react";
 
 const formSchema = z
   .object({
@@ -46,9 +47,12 @@ const SignUp = () => {
     },
   });
 
+  const [loading, setLoading] = useState(false);
+
   const router = useRouter();
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    setLoading(true);
     const response = await fetch("/api/auth/user", {
       method: "POST",
       headers: {
@@ -62,6 +66,7 @@ const SignUp = () => {
     });
 
     if (response.ok) {
+      setLoading(false);
       router.push("/signin");
     } else {
       console.error("Registration not successful");
@@ -160,7 +165,7 @@ const SignUp = () => {
             type="submit"
             className="flex justify-center items-center mx-auto !mt-4 text-[16px]"
           >
-            Sign Up
+            {loading ? "loading..." : "Sign Up"}
           </Button>
           <p className="text-center text-md">
             Already have an account?{" "}
