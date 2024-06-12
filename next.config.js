@@ -18,7 +18,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    domains: ["images.playground.com"],
+    domains: ["images.playground.com", "fly.storage.tigris.dev"],
   },
 };
 
