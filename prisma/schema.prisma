@@ -11,12 +11,13 @@ datasource db {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  email     String   @unique
-  username  String   @unique
-  password  String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id            Int             @id @default(autoincrement())
+  email         String          @unique
+  username      String          @unique
+  password      String
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @updatedAt
+  ReadingStatus ReadingStatus[]
 }
 
 model Waitlist {
@@ -24,4 +25,25 @@ model Waitlist {
   email     String   @unique
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+model Article {
+  id            Int             @id @default(autoincrement())
+  title         String
+  mdx_file_id   String          @unique
+  level         String
+  ReadingStatus ReadingStatus[]
+}
+
+model ReadingStatus {
+  id            Int      @id @default(autoincrement())
+  user_id       Int
+  user          User     @relation(fields: [user_id], references: [id])
+  article_id    String
+  article       Article  @relation(fields: [article_id], references: [mdx_file_id])
+  status        Boolean
+  level         String 
+  last_accessed DateTime @default(now())
+  created_at    DateTime @default(now())
+  updated_at    DateTime @updatedAt
 }
