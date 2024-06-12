@@ -15,7 +15,7 @@ const Feed = async () => {
   const levels = ["A1", "A2", "B1", "B2", "C1", "C2"];
 
   if (session) {
-    const readArticles = await fetch(`/api/reading-status/count?user_id=${session?.user.userId}&levels=${levels.join("-")}}`, {
+    const readArticles = await fetch(`${process.env.URL}/api/reading-status/count?user_id=${session?.user.userId}&levels=${levels.join("-")}}`, {
       method: "GET",
       headers: {
         "Content-Type" : "application/json"

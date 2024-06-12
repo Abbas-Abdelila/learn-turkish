@@ -23,7 +23,7 @@ export default function MarkComplete({
     setError(null);
 
     try {
-      const res = await fetch("/api/reading-status", {
+      const res = await fetch(`${process.env.URL}/api/reading-status`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
