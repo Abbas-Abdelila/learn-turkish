@@ -6,10 +6,9 @@ import { Metadata } from "next";
 // import { Noto_Sans_Cypriot } from "next/font/google";
 
 export const metadata: Metadata = {
-  title: "Pick Turkish",
+  title: "Pick Turkish | Learn Turkish Online",
   description:
-    "Embark on your journey to learn Turkish at Pick Turkish. Our platform provides engaging explainer articles and interactive chatbots powered by advanced AI models. Explore Turkish culture, history, and language with ease. Start your Turkish adventure today!",
-};
+    "Pick Turkish is a platform where you can learn Turkish online. We offer free Turkish lessons, vocabulary, grammar, and more.",};
 
 // const Noto = Noto_Sans_Cypriot({
 //   subsets: ["cypriot"],

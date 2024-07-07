@@ -21,7 +21,7 @@ type ReadArticle = {
 };
 
 export const metadata: Metadata = {
-  title: "All Blogs | Pick Turkish",
+  title: "Pick Turkish | Learn Turkish Online | All Posts",
   description: "All posts of the blog of the website of Pick Turkish",
 };
 
@@ -52,7 +52,7 @@ const Posts = async () => {
       <div className="flex flex-col md:flex-row md:space-x-10">
         <div className="md:w-[60%]">
           {posts.map((post) => {
-            if (readArticles){
+            if (readArticles != null && readArticles.length > 0){
               isRead = readArticles.some((article) => article.article_id == post.url);
             }
             return (

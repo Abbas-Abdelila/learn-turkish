@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Resources | Pick Turkish",
+  title: "Pick Turkish | Resources",
   description: "Resources for learning Turkish",
 };
 
