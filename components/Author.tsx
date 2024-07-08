@@ -17,10 +17,10 @@ const Author = () => {
       </div>
 
       <div className="flex justify-center items-center space-x-4">
-        <Link href="https://twitter.com/abbasabdelila" target="_blank">
+        <Link href="https://x.com/abbasabdelila" target="_blank">
           <Icons.twitter />
         </Link>
-        <Link href="https://twitter.com/abbasabdelila" target="_blank" className="no-underline hidden md:flex hover:font-semibold transition-transform duration-150 ease-in-out">
+        <Link href="https://x.com/abbasabdelila" target="_blank" className="no-underline hidden md:flex hover:font-semibold transition-transform duration-150 ease-in-out">
           <p className="dark:text-white">@abbasabdelila</p>
         </Link>
       </div>
