@@ -108,9 +108,11 @@ const PostPage = async ({ params }: { params: { slug: string } }) => {
         </article>
       </div>
       <div className="hidden md:block md:w-[40%]">
+      {session &&  
         <div className="sticky top-0">
           <Chat />
         </div>
+}
       </div>
     </div>
   );
