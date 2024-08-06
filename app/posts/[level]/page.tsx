@@ -26,26 +26,31 @@ export async function generateMetadata({
 }) {
   return {
     title: `${params.level.toUpperCase()} | Pick Turkish`,
-    desc: `${params.level.toUpperCase()} Level Articles}`
+    desc: `${params.level.toUpperCase()} Level Articles}`,
   };
 }
 
 const Levels = async ({ params }: { params: { level: string } }) => {
-  const session = await getServerSession(authOptions)
-  let readArticles : ReadArticle[] = [];
+  const session = await getServerSession(authOptions);
+  let readArticles: ReadArticle[] = [];
   let isRead = false;
   if (session) {
-    const response = await fetch(`${process.env.URL}/api/reading-status/count?user_id=${session.user.userId}&levels=${params.level.toUpperCase()}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    
+    const response = await fetch(
+      `${process.env.URL}/api/reading-status/count?user_id=${
+        session.user.userId
+      }&levels=${params.level.toUpperCase()}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
     const data = await response.json();
-    readArticles  = data;
+    readArticles = data;
   }
-  
+
   const posts: Post[] = allPosts
     .filter((post) => post.level.toLowerCase() == params.level.toLowerCase())
     .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)));
@@ -56,34 +61,42 @@ const Levels = async ({ params }: { params: { level: string } }) => {
       </div>
       <div className="flex flex-col md:flex-row md:space-x-10">
         <div className="md:w-[60%]">
-          {posts.length != 0 ? posts.map((post) => {
-            if (readArticles){
-              isRead = readArticles.some(article => article.article_id === post.url);
-            }
-            return (
-              <div key={post._id} className="flex flex-col mb-5">
-                <div className="flex space-x-2 items-center">
-                <Link href={`${params.level}/${post.url}`}>
-                  <h3 className="text-xl text-slate-800 dark:text-white font-medium hover:text-blue-700 hover:underline underline-[1px] decoration-red-200 underline-offset-[6px] cursor-pointer">
-                    {post.title} 
-                  </h3>
-                </Link>
-                  { isRead && <span><CheckedIcon /></span>}
+          {posts.length != 0 ? (
+            posts.map((post) => {
+              if (readArticles) {
+                isRead = readArticles.some(
+                  (article) => article.article_id === post.url
+                );
+              }
+              return (
+                <div key={post._id} className="flex flex-col mb-5">
+                  <div className="flex space-x-2 items-center">
+                    <Link href={`${params.level}/${post.url}`}>
+                      <h3 className="text-xl text-slate-800 dark:text-white font-medium hover:text-blue-700 hover:underline underline-[1px] decoration-red-200 underline-offset-[6px] cursor-pointer">
+                        {post.title}
+                      </h3>
+                    </Link>
+                    {isRead && (
+                      <span>
+                        <CheckedIcon />
+                      </span>
+                    )}
+                  </div>
+
+                  <time className="text-sm text-slate-700 dark:text-[#8f8f8f]">
+                    {format(parseISO(post.date), "LLLL d, yyyy")}
+                  </time>
                 </div>
-                
-                <time className="text-sm text-slate-700 dark:text-[#8f8f8f]">
-                  {format(parseISO(post.date), "LLLL d, yyyy")}
-                </time>
-              </div>
-            );
-          }) : <EmailComponent />}
+              );
+            })
+          ) : (
+            <EmailComponent />
+          )}
         </div>
         <div className="hidden md:block md:w-[40%]">
-          {session && 
           <div className="sticky top-0">
             <Chat />
           </div>
-          }
         </div>
       </div>
     </div>
