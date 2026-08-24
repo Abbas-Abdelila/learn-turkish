@@ -2,7 +2,8 @@
 
 ## Introduction
 
-Welcome to Pick Turkish, your ultimate destination for learning the Turkish language. This project is designed to provide a platform for language learners to immerse themselves in the Turkish language through interactive content and resources. With a focus on delivering high-quality, engaging content, Pick Turkish aims to make learning Turkish accessible and enjoyable for everyone.
+Welcome to Pick Turkish, your ultimate destination for learning the Turkish language. 
+I learned Turkish to study University in Turkish and now I have compiled some of the things that I have learned in blog posts for you to get immersed in the beautiful language of Turkish.
 
 ## Features
 
